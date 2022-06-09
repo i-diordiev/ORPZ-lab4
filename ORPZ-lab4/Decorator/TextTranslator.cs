@@ -13,7 +13,7 @@ namespace ORPZ_lab4.Decorator
         {
             var credential = GoogleCredential.FromFile("data-rush-352606-cd1f1491d7ca.json");
             var translationClient = TranslationClient.Create(credential);
-            _data = translationClient.TranslateText(_data, "ru").TranslatedText;
+            Data = translationClient.TranslateText(Data, "ru").TranslatedText;
         }
     }
 }

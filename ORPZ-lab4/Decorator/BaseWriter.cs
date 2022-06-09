@@ -4,13 +4,11 @@ namespace ORPZ_lab4.Decorator
 {
     public abstract class BaseWriter
     {
-        protected string _data;
-
-        public string Data => _data;
+        public string Data { get; set; }
 
         protected BaseWriter(string data)
         {
-            _data = data;
+            Data = data;
         }
 
         public abstract void DoTransformation();
@@ -19,7 +17,7 @@ namespace ORPZ_lab4.Decorator
         {
             using (StreamWriter writer = new StreamWriter(fileName))
             {
-                writer.WriteLine(_data);
+                writer.WriteLine(Data);
             }
         }
 

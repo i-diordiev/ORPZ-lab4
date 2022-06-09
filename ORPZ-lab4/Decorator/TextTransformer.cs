@@ -8,5 +8,24 @@
         {
             this._writer = writer;
         }
+
+        public override void WriteIntoFile(string fileName)
+        {
+            if (_writer != null)
+            {
+                _writer.Data = this.Data;
+                _writer.WriteIntoFile(fileName);
+            }
+        }
+
+        public override string ReadFromFile(string fileName)
+        {
+            if (_writer != null)
+            {
+                return _writer.ReadFromFile(fileName);
+            }
+
+            return string.Empty;
+        }
     }
 }

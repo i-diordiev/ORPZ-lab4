@@ -9,7 +9,7 @@
         public override void DoTransformation()
         {
             var helper = new EncryptionHelper();
-            _data = helper.Encrypt(_data);
+            Data = helper.Encrypt(Data);
         }
     }
 }
