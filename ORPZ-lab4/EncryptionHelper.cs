@@ -3,7 +3,7 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace ORPZ_lab4.Encryption
+namespace ORPZ_lab4
 {
     public class EncryptionHelper
     {
