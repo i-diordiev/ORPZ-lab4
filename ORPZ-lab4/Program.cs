@@ -1,4 +1,5 @@
-﻿using ORPZ_lab4.Decorator;
+﻿using Google.Cloud.Translation.V2;
+using ORPZ_lab4.Decorator;
 
 namespace ORPZ_lab4
 {
@@ -17,21 +18,21 @@ namespace ORPZ_lab4
         private static void Main(string[] args)
         {
             var text = "text";
-            BaseWriter writer = new FileWriter(text);
-            writer.DoTransformation();
-            writer.WriteIntoFile("just text.txt");
+            BaseFileWriter fileWriter = new FileWriter(text);
+            fileWriter.DoTransformation();
+            fileWriter.WriteIntoFile("just text.txt");
 
-            writer = new TextTranslator(writer, writer.Data);
-            writer.DoTransformation();
-            writer.WriteIntoFile("translated text.txt");
+            fileWriter = new TextTranslator(fileWriter, LanguageCodes.Ukrainian, fileWriter.Data);
+            fileWriter.DoTransformation();
+            fileWriter.WriteIntoFile("translated text.txt");
 
-            writer = new TextEncryptor(writer, writer.Data);
-            writer.DoTransformation();
-            writer.WriteIntoFile("translated encrypted text.txt");
+            fileWriter = new TextEncryptor(fileWriter, fileWriter.Data);
+            fileWriter.DoTransformation();
+            fileWriter.WriteIntoFile("translated encrypted text.txt");
 
-            writer = new TextDecryptor(writer, writer.Data);
-            writer.DoTransformation();
-            writer.WriteIntoFile("translated decrypted text.txt");
+            fileWriter = new TextDecryptor(fileWriter, fileWriter.Data);
+            fileWriter.DoTransformation();
+            fileWriter.WriteIntoFile("translated decrypted text.txt");
         }
     }
 }

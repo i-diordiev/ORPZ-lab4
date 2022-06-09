@@ -2,11 +2,11 @@
 
 namespace ORPZ_lab4.Decorator
 {
-    public abstract class BaseWriter
+    public abstract class BaseFileWriter
     {
         public string Data { get; set; }
 
-        protected BaseWriter(string data)
+        protected BaseFileWriter(string data)
         {
             Data = data;
         }

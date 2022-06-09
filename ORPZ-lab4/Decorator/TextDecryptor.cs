@@ -2,7 +2,7 @@
 {
     public class TextDecryptor : TextTransformer
     {
-        public TextDecryptor(BaseWriter writer, string data) : base(writer, data)
+        public TextDecryptor(BaseFileWriter fileWriter, string data) : base(fileWriter, data)
         {
         }
 

@@ -3,7 +3,7 @@ using System.IO;
 
 namespace ORPZ_lab4.Decorator
 {
-    public class FileWriter : BaseWriter
+    public class FileWriter : BaseFileWriter
     {
         public FileWriter(string data) : base(data)
         {

@@ -2,7 +2,7 @@
 {
     public class TextEncryptor : TextTransformer
     {
-        public TextEncryptor(BaseWriter writer, string data) : base(writer, data)
+        public TextEncryptor(BaseFileWriter fileWriter, string data) : base(fileWriter, data)
         {
         }
 

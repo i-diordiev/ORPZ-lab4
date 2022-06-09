@@ -1,28 +1,28 @@
 ﻿namespace ORPZ_lab4.Decorator
 {
-    public abstract class TextTransformer : BaseWriter
+    public abstract class TextTransformer : BaseFileWriter
     {
-        protected BaseWriter _writer;
+        protected BaseFileWriter FileWriter;
         
-        protected TextTransformer(BaseWriter writer, string data) : base(data)
+        protected TextTransformer(BaseFileWriter fileWriter, string data) : base(data)
         {
-            this._writer = writer;
+            this.FileWriter = fileWriter;
         }
 
         public override void WriteIntoFile(string fileName)
         {
-            if (_writer != null)
+            if (FileWriter != null)
             {
-                _writer.Data = this.Data;
-                _writer.WriteIntoFile(fileName);
+                FileWriter.Data = this.Data;
+                FileWriter.WriteIntoFile(fileName);
             }
         }
 
         public override string ReadFromFile(string fileName)
         {
-            if (_writer != null)
+            if (FileWriter != null)
             {
-                return _writer.ReadFromFile(fileName);
+                return FileWriter.ReadFromFile(fileName);
             }
 
             return string.Empty;
